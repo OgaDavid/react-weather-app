@@ -1,37 +1,37 @@
 import React from "react";
 import "./weather.css";
 
-const Currentweather = () => {
+const Currentweather = ({ data }) => {
   return (
     <div className="weather">
       <div className="top">
         <div>
-          <p className="city">Belgrade</p>
-          <p className="weather-description">Sunny</p>
+          <p className="city">{ data.city }</p>
+          <p className="weather-description">{ data.weather[0].description }</p>
         </div>
-        <img className="weather-icon" src="images/01d.png" alt="weather" />
+        <img className="weather-icon" src={`images/${data.weather[0].icon}.png`} alt="weather" />
       </div>
       <div className="bottom">
-        <p className="temperature">18°C</p>
+        <p className="temperature">{data.main.temp}°C</p>
         <div className="details">
           <div className="row">
             <span className="label">Details 🎯</span>
           </div>
           <div className="row">
             <span className="label">Feels Like</span>
-            <span className="value">22°C</span>
+            <span className="value">{data.main.feels_like}°C</span>
           </div>
           <div className="row">
             <span className="label">Wind</span>
-            <span className="value">2m/s</span>
+            <span className="value">{data.wind.speed} m/s</span>
           </div>
           <div className="row">
             <span className="label">Humidity</span>
-            <span className="value">20%</span>
+            <span className="value">{data.main.humidity}%</span>
           </div>
           <div className="row">
             <span className="label">Pressure</span>
-            <span className="value">22 hPa</span>
+            <span className="value">{data.main.pressure} hPa</span>
           </div>
         </div>
       </div>
