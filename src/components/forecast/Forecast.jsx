@@ -22,7 +22,6 @@ const Forecast = ({ data }) => {
   const forecastDays = days
     .slice(weekDay, days.length)
     .concat(days.slice(0, weekDay));
-  console.log(forecastDays);
   return (
     <section className='forecast-section'>
       <h2 className="title">Daily Forecast ⚡☔</h2>

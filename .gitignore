@@ -10,6 +10,9 @@ api.js
 # testing
 /coverage
 
+#api keys
+.env
+
 # production
 /build
 
